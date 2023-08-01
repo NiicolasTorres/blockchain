@@ -101,7 +101,7 @@ class Blockchain:
 
 app = Flask(__name__)
 
-#creando una direccion para el nodo del puerto 8000
+#creating an address for the node at port 8000
 node_address = str(uuid4()).replace('-','')
 
 blockchain = Blockchain()
@@ -145,7 +145,7 @@ def is_valid():
 
 
 
-#agregamos nueva transaccion blockchain
+#we add new blockchain transaction
 @app.route('/add_transactions', methods=['POST'])
 
 def add_transaction():
@@ -158,7 +158,7 @@ def add_transaction():
     response = {'message':f'La transaccion sera añadida al bloque {index} '}
     return jsonify(response), 201
 
-#conectando los nodos
+#connecting the nodes
 
 @app.route('/connect_node', methods=['POST'])
 def connect_node():
@@ -172,7 +172,7 @@ def connect_node():
                     'total_nodes':list(blockchain.nodes)}
     return jsonify(response),201
     
-# remplazando la cadena por la cadena mas larga
+# replacing the string with the longest string
 @app.route('/replace_chain', methods=['GET'])
 def replace_chain():
     is_replace_chain = blockchain.replace_chain()
@@ -185,7 +185,7 @@ def replace_chain():
     return jsonify(response),200
 
 # running the app   
-app.run('127.0.0.1',port ='8000')
+app.run('xxx.x.x.x',port ='8000')
 
 
     
